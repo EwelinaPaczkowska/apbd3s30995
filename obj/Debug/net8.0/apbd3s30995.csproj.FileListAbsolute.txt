@@ -1,0 +1,15 @@
+C:\Users\eweli\Desktop\szkola\apbd3s30995\bin\Debug\net8.0\apbd3s30995.exe
+C:\Users\eweli\Desktop\szkola\apbd3s30995\bin\Debug\net8.0\apbd3s30995.deps.json
+C:\Users\eweli\Desktop\szkola\apbd3s30995\bin\Debug\net8.0\apbd3s30995.runtimeconfig.json
+C:\Users\eweli\Desktop\szkola\apbd3s30995\bin\Debug\net8.0\apbd3s30995.dll
+C:\Users\eweli\Desktop\szkola\apbd3s30995\bin\Debug\net8.0\apbd3s30995.pdb
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.AssemblyInfoInputs.cache
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.AssemblyInfo.cs
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.csproj.CoreCompileInputs.cache
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.dll
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\refint\apbd3s30995.dll
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.pdb
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.genruntimeconfig.cache
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\ref\apbd3s30995.dll
+C:\Users\eweli\Desktop\szkola\apbd3s30995\obj\Debug\net8.0\apbd3s30995.sourcelink.json

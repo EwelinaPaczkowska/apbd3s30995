@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "apbd3s30995/1.0.0": {
+        "runtime": {
+          "apbd3s30995.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "apbd3s30995/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
