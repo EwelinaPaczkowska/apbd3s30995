@@ -27,7 +27,7 @@ public class Kontenerowiec : IHazardNotifier
         if ((kontener.waga + kontener.masa) <= maks_waga && k.Count + 1 <= maks_liczba)
         {
             k.Add(kontener);
-            Console.WriteLine("dodano: " + kontener.toString());
+            Console.WriteLine("dodano: " + kontener.info());
         }
         else
             Notify("za duza waga kontenera lub nie ma miejsca na statku");
@@ -52,36 +52,86 @@ public class Kontenerowiec : IHazardNotifier
         if (k.Contains(kontener))
         {
             k.Remove(kontener);
-            Console.WriteLine("usnieto: " + kontener.info());
+            Console.WriteLine("usunieto: " + kontener.info());
         }
         else
             Console.WriteLine("nie ma takiego kontenera na statku");
     }
-    
+
+    public void rozladuj()
+    {
+        k.Clear();
+    }
+
+    public void przenies(Kontenerowiec nowy, Kontener kontener)
+    {
+        if (k.Contains(kontener))
+        {
+            double suma = 0;
+            foreach (var kont in nowy.k)
+            {
+                suma += kont.masa + kont.waga / 1000;
+            }
+        
+            if (suma + (kontener.masa + kontener.waga) / 1000 <= nowy.maks_waga && nowy.k.Count < nowy.maks_liczba)
+            {
+                k.Remove(kontener);
+                nowy.dodaj_kontener(kontener);
+                Console.WriteLine("Kontener: "+ kontener.info() + " przeniesiony z " + numer + " na kontenerowiec: " + nowy.numer);
+            }
+            else
+            {
+                Console.WriteLine("Za duża waga kontenera lub przekroczono dopuszczalną liczbę kontenerów na nowym statku.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Nie ma takiego kontenera na statku.");
+        }
+    }
     
     public void zastap(Kontenerowiec kontenerowiec, Kontener kontener, Kontener nowy)
     {
-        if (k.Contains(kontener) && !k.Contains(nowy))
+        if (kontenerowiec.k.Contains(kontener) && !kontenerowiec.k.Contains(nowy))
         {
-            double nowy_masa = nowy.masa + nowy.waga;
-            double kon_masa = kontener.masa + kontener.waga;
-            if (nowy_masa <= maks_waga + nowy_masa
-                && kon_masa <= kontenerowiec.maks_waga + kon_masa)
+            double suma1 = 0;
+            foreach (var kont in kontenerowiec.k)
             {
-                k.Remove(kontener);
-                k.Add(nowy);
-                kontenerowiec.dodaj_kontener(kontener);
-                kontenerowiec.usun(nowy);
-                Console.WriteLine("Dodano kontener: " + nowy.info() + " na kontenerowiec: " + numer);
+                suma1 += kont.masa + kont.waga / 1000;
+            }
+
+            double suma2 = 0;
+            foreach (var kont in k)
+            {
+                suma2 += kont.masa + kont.waga / 1000;
+            }
+            
+            if (kontenerowiec.maks_waga >= suma1 - (kontener.masa + kontener.waga) / 1000 + (nowy.masa + nowy.waga) / 1000
+                && kontenerowiec.k.Count-1 + 1 <= kontenerowiec.maks_liczba &&
+                maks_waga >= suma2 + (kontener.masa + kontener.waga) / 1000 - (nowy.masa + nowy.waga) / 1000
+                    && k.Count-1 + 1 <= maks_liczba)
+            {
+                kontenerowiec.usun(kontener);
+                kontenerowiec.dodaj_kontener(nowy);
+                k.Remove(nowy);
+                k.Add(kontener);
+                Console.WriteLine("Zamieniono kontener " + kontener.info() + " na kontener: " + nowy.info());
             }
             else
-                Console.WriteLine("za duza waga kontenera, zamiana niemozliwa");
+            {
+                Console.WriteLine("Za duża waga kontenerów lub za dużo kontenerów na statku.");
+            }
         }
         else
-            Console.WriteLine("Brak takiego konteneru na statku");
+        {
+            Console.WriteLine("Brak takiego kontenera na statku.");
+        }
     }
-    
 
+    public String toString()
+    {
+        return "kontenerowiec: " + numer + " maks_ladownosc ";
+    }
     public void informacje()
     {
         if (k.Count == 0)

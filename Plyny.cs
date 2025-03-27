@@ -21,7 +21,7 @@ public class Plyny : Kontener, IHazardNotifier
         double masa_zaladuj = Int32.Parse(input);
         if (nb)
         {
-            if (masa_zaladuj + waga + masa > max * 0.5)
+            if (masa_zaladuj + waga + masa >= max * 0.5)
             {
                 Notify("Niebezpieczny ladunek, mozna zaladowac tylko 50% pojemnosci do kontenera: " + info());
                 throw new OverfillException("niebezpieczna sytuacja kontenera: " + info());
