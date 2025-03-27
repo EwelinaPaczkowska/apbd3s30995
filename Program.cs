@@ -43,11 +43,11 @@ class Program
         kontenerowiec2.przenies(kontenerowiec, k1);
         kontenerowiec.informacje();
         kontenerowiec2.informacje();
-        Console.WriteLine("====================");
         Chlodnia k4 = new Chlodnia(100, 10000,200, 20000, 15, p2);
         kontenerowiec.zastap(kontenerowiec2,k2,k1);
         kontenerowiec.informacje();
         kontenerowiec2.informacje();
         kontenerowiec2.usun(k4);
+        Console.WriteLine(kontenerowiec.toString());
     }
 }

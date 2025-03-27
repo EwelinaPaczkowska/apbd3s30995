@@ -130,7 +130,8 @@ public class Kontenerowiec : IHazardNotifier
 
     public String toString()
     {
-        return "kontenerowiec: " + numer + " maks_ladownosc ";
+        return "kontenerowiec: " + numer + " maks_ladownosc w tonach: " + maks_waga + " maks_liczba: " + maks_liczba
+               + " maks_predkosc: " + maks_predkosc;
     }
     public void informacje()
     {
